@@ -7,8 +7,8 @@ import joblib
 model_path = hf_hub_download(repo_id="ManjupriyaJ/Predictive-Maintenance", filename="best_predictive_maintenance_model_v1.joblib")
 model = joblib.load(model_path)
 
-# Streamlit UI for Machine Failure Prediction
-st.title("Machine Failure Prediction App")
+# Streamlit UI for Engine Failure Prediction
+st.title("Engine Failure Prediction App")
 st.write("""
 This application predicts the likelihood of potential failures of Machine based on its historical and real-time engine sensor data.
 Please enter the sensor data below to get a prediction.
@@ -47,7 +47,7 @@ coolant_pressure = st.number_input(
 lub_oil_temp = st.number_input(
     "Lub Oil Temp",
     min_value=10.0,
-    value=10.0,
+    value=11.0,
     step=1.0
 )
 
@@ -67,8 +67,8 @@ input_data = pd.DataFrame([{
     "coolant_temp": coolant_temp
 }])
 
-if st.button("Machine Failure Prediction"):
+if st.button("Engine Failure Prediction"):
     prediction = model.predict(input_data)[0]
-    result = "Machine is Abnormal/Faulty!!" if prediction == 1 else "Machine is Normal/Active!!"
+    result = "Engine in AbNormal! Needs Maintenance!!" if prediction == 1 else "Engine is Normal/Active!!"
     st.subheader("Prediction Result:")
     st.success(f"The model predicts: **{result}**")
