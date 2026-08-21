@@ -38,7 +38,7 @@ fuel_pressure = st.number_input(
 )
 
 coolant_pressure = st.number_input(
-    Coolant Pressure",
+    "Coolant Pressure",
     min_value=0.001,
     value=0.003,
     step=0.001
