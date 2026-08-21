@@ -47,7 +47,7 @@ coolant_pressure = st.number_input(
 lub_oil_temp = st.number_input(
     "Lub Oil Temp",
     min_value=10.0,
-    value=2.0,
+    value=10.0,
     step=1.0
 )
 
