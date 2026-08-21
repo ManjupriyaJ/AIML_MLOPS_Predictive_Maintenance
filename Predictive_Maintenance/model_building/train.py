@@ -18,7 +18,7 @@ import mlflow
 
 # Get the public_url from the environment variable (set by the ngrok cell)
 # It's important to use the public_url for remote tracking when running in Colab with ngrok
-public_url = os.environ.get("MLFLOW_TRACKING_URI", "http://localhost:5000")
+public_url = os.environ.get("MLFLOW_TRACKING_URI", "file:./mlruns")
 mlflow.set_tracking_uri(public_url)
 mlflow.set_experiment("mlops-training-experiment")
 
